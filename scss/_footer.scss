@@ -1,0 +1,53 @@
+
+//EJEMPLO MIXIN Y NESTING-
+
+/*---------- FOOTER ----------*/
+
+@mixin footerp ($flexdirec, $justifyc) {
+
+    background: rgb(63, 63, 63);
+    font-size: 12px;
+    grid-area: footer;
+    padding: 25px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: $flexdirec;
+    justify-content: $justifyc;
+    width: 100%;
+
+}
+
+.footer {
+    @include footerp(column, space-between);
+
+    .footer-text {
+        border-bottom: solid 1px grey;
+
+        span {
+            color: rgb(108, 175, 153);
+        }
+    }
+
+    .btn-redes-container {
+        height: 20px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        .btn-redes img {
+            height: 20px;
+            width: 20px;
+            margin: 10px;
+            transition: 0.2s ease-in-out;
+
+
+        }
+
+        .btn-redes img:hover {
+            transform: scale(1.5);
+
+        }
+
+    }
+}
